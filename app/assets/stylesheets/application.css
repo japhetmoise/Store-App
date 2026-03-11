@@ -1,0 +1,230 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap");
+
+:root {
+	--bg: #f4efe4;
+	--surface: #fffaf0;
+	--ink: #231f20;
+	--muted: #6a5f53;
+	--accent: #006d5b;
+	--accent-strong: #004f42;
+	--danger: #b43a27;
+	--line: #d8ccb8;
+	--radius: 18px;
+	--shadow: 0 10px 30px rgba(35, 31, 32, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	color: var(--ink);
+	background:
+		radial-gradient(circle at 15% 10%, #fbe6ba 0%, transparent 35%),
+		radial-gradient(circle at 85% 15%, #d7f0e7 0%, transparent 30%),
+		var(--bg);
+}
+
+.dashboard {
+	width: min(1120px, 94vw);
+	margin: 2.5rem auto 3rem;
+	display: grid;
+	gap: 1.3rem;
+}
+
+.hero {
+	background: linear-gradient(120deg, #1b3c35 0%, #244f46 55%, #2f675b 100%);
+	color: #f9f6ef;
+	border-radius: calc(var(--radius) + 4px);
+	padding: 1.5rem 1.4rem;
+	box-shadow: var(--shadow);
+}
+
+.hero h1 {
+	font-family: "DM Serif Display", Georgia, serif;
+	margin: 0.25rem 0;
+	line-height: 1.18;
+}
+
+.eyebrow {
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	margin: 0;
+	font-size: 0.8rem;
+	opacity: 0.9;
+}
+
+.subtitle {
+	margin: 0;
+	opacity: 0.94;
+}
+
+.status {
+	margin-top: 0.9rem;
+	font-size: 0.92rem;
+	min-height: 1.4rem;
+}
+
+.status.ok {
+	color: #cff8d3;
+}
+
+.status.error {
+	color: #ffd6cf;
+}
+
+.panel {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 1rem;
+	box-shadow: var(--shadow);
+}
+
+.panel-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.panel h2 {
+	margin: 0;
+	font-family: "DM Serif Display", Georgia, serif;
+	font-size: 1.35rem;
+}
+
+.record-form {
+	margin-top: 0.85rem;
+	display: grid;
+	gap: 0.7rem;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.record-form label {
+	display: grid;
+	gap: 0.32rem;
+	font-size: 0.92rem;
+	color: var(--muted);
+}
+
+.record-form input {
+	width: 100%;
+	border: 1px solid #bcae99;
+	border-radius: 10px;
+	padding: 0.54rem 0.58rem;
+	font: inherit;
+	color: var(--ink);
+	background: #fff;
+}
+
+.record-form select {
+	width: 100%;
+	border: 1px solid #bcae99;
+	border-radius: 10px;
+	padding: 0.54rem 0.58rem;
+	font: inherit;
+	color: var(--ink);
+	background: #fff;
+}
+
+.form-actions {
+	display: flex;
+	align-items: end;
+	gap: 0.55rem;
+}
+
+.btn {
+	border: 1px solid #9b8f80;
+	background: #f0e5d4;
+	color: #2c2521;
+	border-radius: 999px;
+	padding: 0.48rem 0.82rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.btn.primary {
+	border-color: var(--accent);
+	background: var(--accent);
+	color: #fff;
+}
+
+.btn.primary:hover {
+	background: var(--accent-strong);
+}
+
+.btn.ghost {
+	background: transparent;
+}
+
+.btn.tiny {
+	font-size: 0.78rem;
+	padding: 0.28rem 0.62rem;
+}
+
+.btn.danger {
+	background: #f8ddd8;
+	border-color: #df9f95;
+	color: var(--danger);
+}
+
+.table-wrap {
+	margin-top: 0.9rem;
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.95rem;
+}
+
+th,
+td {
+	text-align: left;
+	border-bottom: 1px solid #e6dac7;
+	padding: 0.56rem 0.25rem;
+	vertical-align: middle;
+}
+
+th {
+	color: #564d43;
+	font-size: 0.84rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+.row-actions {
+	display: flex;
+	gap: 0.35rem;
+}
+
+@media (max-width: 760px) {
+	.dashboard {
+		margin-top: 1rem;
+	}
+
+	.hero,
+	.panel {
+		border-radius: 14px;
+	}
+
+	.form-actions {
+		grid-column: 1 / -1;
+		flex-wrap: wrap;
+	}
+}
